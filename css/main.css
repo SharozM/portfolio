@@ -28,7 +28,7 @@ h2 {
 
 h3 {
   font-size: 1.3rem;
-  line-height: 3rem;
+  line-height: 1.5rem;
 }
 
 .text-center {
@@ -176,6 +176,7 @@ h3 {
 }
 .home-b div {
   padding: 4rem;
+  max-width: 100%;
 }
 .home-b div p {
   font-size: 1.5rem;
@@ -242,14 +243,9 @@ h3 {
 #main-footer .container i {
   font-size: 1.2rem;
   margin-right: 1rem;
-  padding: 1.2rem;
-  height: 20px;
-  width: 20px;
+  padding: 0.65rem;
   border: 2px solid #fff;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: all 1s;
 }
 #main-footer .container i:hover {
@@ -318,6 +314,9 @@ h3 {
   align-items: center;
   justify-content: space-evenly;
 }
+.about-c img {
+  width: 15%;
+}
 .about-d .testimonials {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -371,7 +370,7 @@ h3 {
 .work .work-items .item .item-text h2 {
   font-weight: 600;
   font-size: 2.2rem;
-  padding-top: 0.85rem;
+  padding-top: 1rem;
 }
 .work .work-items .item .item-text p {
   font-size: 1.1rem;
@@ -405,6 +404,166 @@ h3 {
   transition: all 0.5s;
   transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
   transition: all 2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.contact-a form .text-inputs {
+  display: grid;
+  grid-template-areas: "name email" "subject phone" "message message";
+  gap: 1rem;
+}
+.contact-a form .text-inputs label {
+  display: block;
+  padding-bottom: 0.5rem;
+}
+.contact-a form .text-inputs input, .contact-a form .text-inputs textarea {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+}
+.contact-a form .text-inputs textarea {
+  resize: none;
+}
+.contact-a form .text-inputs .name {
+  grid-area: name;
+}
+.contact-a form .text-inputs .email {
+  grid-area: email;
+}
+.contact-a form .text-inputs .subject {
+  grid-area: subject;
+}
+.contact-a form .text-inputs .phone {
+  grid-area: phone;
+}
+.contact-a form .text-inputs .message {
+  grid-area: message;
+}
+.contact-a form .btn-primary {
+  display: block;
+  margin: auto;
+  width: 30%;
+  margin-top: 2rem;
+}
+.contact-b {
+  color: #fff;
+}
+.contact-b .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3rem 1rem;
+}
+.contact-b .container .item i {
+  font-size: 2rem;
+}
+.contact-b .container .item h3 {
+  padding: 0.5rem 0rem;
+  font-weight: 600;
+}
+.contact-c {
+  color: #fff;
+  background: #ffbc00;
+}
+
+@media screen and (max-width: 800px) {
+  .header-home {
+    height: 30rem;
+  }
+  .header-home .header-content {
+    padding-top: 5rem;
+  }
+  .header-home .header-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-b div {
+    padding: 4rem 2rem;
+  }
+
+  .home-c {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-a {
+    grid-template-areas: "bioimg bioimg bioimg" "bio bio bio" "award1 award2 award3";
+  }
+  .about-a img {
+    width: 80%;
+    justify-self: center;
+  }
+  .about-d .testimonials {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 700px) {
+  .home, .home-a, .home-b, .home-c {
+    grid-template-columns: 1fr;
+  }
+  .home h3, .home-a h3, .home-b h3, .home-c h3 {
+    line-height: 3rem;
+  }
+  .home-a i {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  #main-footer .container {
+    flex-direction: column;
+  }
+  #main-footer .container p {
+    margin: 0;
+    padding: 1rem 0rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header, .header-inner, .header-home {
+    height: 10rem;
+    border-bottom: 3px solid #ffbc00;
+  }
+  .header .container #nav-bar, .header-inner .container #nav-bar, .header-home .container #nav-bar {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header .container #nav-bar ul, .header-inner .container #nav-bar ul, .header-home .container #nav-bar ul {
+    margin-left: 0;
+  }
+  .header-content {
+    display: none;
+  }
+
+  .about-c {
+    display: none;
+  }
+
+  .work .work-items {
+    grid-template-columns: 1fr;
+    box-shadow: none;
+  }
+  .work .work-items .item {
+    margin: 1rem 0rem;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-a .container form .text-inputs {
+    grid-template-areas: "name" "email" "subject" "phone" "message";
+  }
+  .contact-b .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .contact-b .container .item {
+    border-bottom: 1px solid #555;
+    padding: 1.5rem 0rem;
+    width: 100%;
+  }
+  .contact-b .container .item h3 {
+    padding: 0.2rem;
+  }
+  .contact-b .container .item:last-child {
+    border: 0;
+  }
+  .contact-c h1 {
+    font-size: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
