@@ -533,6 +533,9 @@ h3 {
   .about-c {
     display: none;
   }
+  .about-a {
+    grid-template-areas: "bioimg" "bio" "award1" "award2" "award3";
+  }
 
   .work .work-items {
     grid-template-columns: 1fr;
